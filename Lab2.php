@@ -125,3 +125,13 @@ for ($i = 0; $i < count($numbers); $i++) {
         break;
     }
 }
+echo "\n\n";
+
+/* Ex. 15 */
+function printStringReturnNumber($name, $age) {
+    echo $name;
+    return $age;
+}
+
+$my_num = printStringReturnNumber('David', 26);
+echo "\n".$my_num;
