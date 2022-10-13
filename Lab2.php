@@ -135,3 +135,47 @@ function printStringReturnNumber($name, $age) {
 
 $my_num = printStringReturnNumber('Emma', 23);
 echo "\n".$my_num;
+
+/* Ex. 16 */
+echo "\n\n";
+function increaseEnthusiasm($text) {
+    return $text.'!';
+}
+echo increaseEnthusiasm('ok');
+echo "\n";
+function repeatThreeTimes($text) {
+    return $text.$text.$text;
+}
+echo repeatThreeTimes('hello');
+echo "\n";
+echo increaseEnthusiasm(repeatThreeTimes('hello'));
+echo "\n";
+function cut($text, $chars_count = 10) {
+    return substr($text, 0, $chars_count);
+}
+echo cut('Hello, friend!', 6);
+echo "\n\n";
+
+$my_array2 = array(4, 5, 1, 8, 6, 7);
+function printArrayUsingRecursionNoLoop($array, $index, $size) {
+    if ($index >= $size)
+        return;
+    echo $array[$index]."\n";
+    printArrayUsingRecursionNoLoop($array, $index + 1, $size);
+}
+printArrayUsingRecursionNoLoop($my_array2, 0, count($my_array2));
+echo "\n";
+
+$number = 38;
+function sumDigitsUnlessSumIsLess10($n) {
+    $array = str_split($n);
+    $sum = 0;
+    for ($i = 0; $i < count($array); $i++) {
+        $sum += $array[$i];
+    }
+    if ($sum <= 9)
+        echo $sum;
+    else
+        sumDigitsUnlessSumIsLess10($sum);
+}
+sumDigitsUnlessSumIsLess10($number);
