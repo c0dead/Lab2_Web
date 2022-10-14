@@ -240,3 +240,51 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo count($arr)."\n";
 echo $arr[sizeof($arr) - 1]."\n";
 echo $arr[sizeof($arr) - 2]."\n";
+
+/* Ex. 18 */
+echo "\n";
+function isMoreThan10($a, $b) {
+    if ($a + $b > 10)
+        return "true";
+    else
+        return "false";
+}
+echo isMoreThan10(4, 11);
+echo "\n";
+
+function isEqual($a, $b) {
+    if ($a == $b)
+        return "true";
+    else
+        return "false";
+}
+echo isEqual(6, 6);
+echo "\n";
+
+$test = 0;
+echo $test == 0 ? 'верно' : '';
+echo "\n\n";
+
+$age = 26;
+function sumDigits($n) {
+    $array = str_split($n);
+    $sum = 0;
+    for ($i = 0; $i < count($array); $i++) {
+        $sum += $array[$i];
+    }
+    return $sum;
+}
+if ($age < 10 || $age > 99)
+    echo "the age is either less than 10 or more than 99\n";
+if ($age >= 10 && $age <= 99)
+    echo sumDigits($age)."\n";
+if (sumDigits($age) <= 9)
+    echo "сумма цифр однозначна\n";
+else if (sumDigits($age) > 9)
+    echo "сумма цифр двузначна\n";
+echo "\n";
+
+$arr = array(9, 3, 2);
+if (count($arr) == 3)
+    echo array_sum($arr);
+echo "\n";
