@@ -289,3 +289,12 @@ $arr = array(1, 5, 7);
 if (count($arr) == 3)
     echo array_sum($arr);
 echo "\n";
+
+/* Ex. 19 */
+echo "\n";
+function pyramid() {
+    for ($i = 1; $i <= 20; $i++)
+        echo str_repeat('x', $i)."\n";
+}
+pyramid();
+echo "\n";
