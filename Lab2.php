@@ -11,14 +11,14 @@ $order .= " and french fries";
 echo "\nYour order is: $very_bad_unclear_name.";
 
 /* Ex. 2 */
-$number_int = 9;
+$number_int = 8;
 echo "\n$number_int";
 echo "\n";
 
-$number_float = 9.8;
+$number_float = 8.8;
 echo $number_float;
 
-echo "\n".($number_int + 3);
+echo "\n".($number_int + 4);
 
 $last_month = 1187.23;
 $this_month = 1089.98;
@@ -37,7 +37,7 @@ echo "\n".$days_per_language;
 echo "\n".(8**2);
 
 /* Ex. 13 */
-$my_num = 15;
+$my_num = 10;
 $answer = $my_num;
 $answer += 2;
 $answer *= 2;
@@ -95,8 +95,8 @@ while ($index < 10) {
 }
 print_r($rand_array2);
 echo "\n".abs($a - $b);
-$a = 6;
-$b = 7;
+$a = 5;
+$b = 8;
 echo "\n".abs($a - $b);
 echo "\n";
 $my_array = array(1, 2, -1, -2, 3, -3);
@@ -106,7 +106,7 @@ for ($i = 0; $i < count($my_array); $i++) {
 }
 print_r($my_new_array);
 echo "\n";
-$number = 8;
+$number = 6;
 $number_divisors = array();
 for ($i = 1; $i <= $number; $i++) {
     if ($number % $i == 0)
@@ -133,7 +133,7 @@ function printStringReturnNumber($name, $age) {
     return $age;
 }
 
-$my_num = printStringReturnNumber('Emma', 23);
+$my_num = printStringReturnNumber('David', 26);
 echo "\n".$my_num;
 
 /* Ex. 16 */
@@ -141,22 +141,22 @@ echo "\n\n";
 function increaseEnthusiasm($text) {
     return $text.'!';
 }
-echo increaseEnthusiasm('ok');
+echo increaseEnthusiasm('hey');
 echo "\n";
 function repeatThreeTimes($text) {
     return $text.$text.$text;
 }
-echo repeatThreeTimes('hello');
+echo repeatThreeTimes('hey');
 echo "\n";
 echo increaseEnthusiasm(repeatThreeTimes('hello'));
 echo "\n";
 function cut($text, $chars_count = 10) {
     return substr($text, 0, $chars_count);
 }
-echo cut('Hello, friend!', 6);
+echo cut('Hello, world!', 5);
 echo "\n\n";
 
-$my_array2 = array(4, 5, 1, 8, 6, 7);
+$my_array2 = array(1, 5, 3, 8, 9, 4);
 function printArrayUsingRecursionNoLoop($array, $index, $size) {
     if ($index >= $size)
         return;
@@ -166,7 +166,7 @@ function printArrayUsingRecursionNoLoop($array, $index, $size) {
 printArrayUsingRecursionNoLoop($my_array2, 0, count($my_array2));
 echo "\n";
 
-$number = 38;
+$number = 91;
 function sumDigitsUnlessSumIsLess10($n) {
     $array = str_split($n);
     $sum = 0;
@@ -179,7 +179,6 @@ function sumDigitsUnlessSumIsLess10($n) {
         sumDigitsUnlessSumIsLess10($sum);
 }
 sumDigitsUnlessSumIsLess10($number);
-echo "\n\n";
 
 /* Ex. 17 */
 function arrayFill($symbol, $size)
@@ -222,9 +221,9 @@ echo $result;
 echo "\n\n";
 
 $user = array(
-    'name' => 'Pavel',
-    'surname' => 'Sokolov',
-    'patronymic' => "Nikolaevich",
+    'name' => 'Maria',
+    'surname' => 'Belova',
+    'patronymic' => "Ivanovna",
 );
 echo $user['name']." ".$user['surname']." ".$user['patronymic'];
 echo "\n\n";
@@ -241,90 +240,3 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo count($arr)."\n";
 echo $arr[sizeof($arr) - 1]."\n";
 echo $arr[sizeof($arr) - 2]."\n";
-
-/* Ex. 18 */
-echo "\n";
-function isMoreThan10($a, $b) {
-    if ($a + $b > 10)
-        return "true";
-    else
-        return "false";
-}
-echo isMoreThan10(2, 7);
-echo "\n";
-
-function isEqual($a, $b) {
-    if ($a == $b)
-        return "true";
-    else
-        return "false";
-}
-echo isEqual(2, 2);
-echo "\n";
-
-$test = 0;
-echo $test == 0 ? 'верно' : '';
-echo "\n\n";
-
-$age = 23;
-function sumDigits($n) {
-    $array = str_split($n);
-    $sum = 0;
-    for ($i = 0; $i < count($array); $i++) {
-        $sum += $array[$i];
-    }
-    return $sum;
-}
-if ($age < 10 || $age > 99)
-    echo "the age is either less than 10 or more than 99\n";
-if ($age >= 10 && $age <= 99)
-    echo sumDigits($age)."\n";
-if (sumDigits($age) <= 9)
-    echo "сумма цифр однозначна\n";
-else if (sumDigits($age) > 9)
-    echo "сумма цифр двузначна\n";
-echo "\n";
-
-$arr = array(1, 5, 7);
-if (count($arr) == 3)
-    echo array_sum($arr);
-echo "\n";
-
-/* Ex. 19 */
-echo "\n";
-function pyramid() {
-    for ($i = 1; $i <= 20; $i++)
-        echo str_repeat('x', $i)."\n";
-}
-pyramid();
-echo "\n";
-
-/* Ex. 20 */
-$my_array4 = array(1, 8, 9, 3, 6, 5);
-$average = array_sum($my_array4)/count($my_array4);
-echo $average."\n";
-
-// способ 1:
-echo array_sum(range(1,100))."\n";
-// способ 2: сумма арифметической прогрессии Sn = (a1 + an)*(n/2)
-echo (1 + 100)*(100/2)."\n";
-
-echo "\n";
-$numbers = array(3, 8, 9, 16, 6, 25);
-$rootNumbers = array_map('sqrt', $numbers);
-print_r($rootNumbers);
-
-echo "\n";
-$keys = range('a', 'z');
-$values = range(1, 26);
-$array = array_combine($keys, $values);
-print_r($array);
-
-echo "\n";
-$line = '1234567890';
-$array = str_split($line); // array = (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
-$chunks = array_chunk($array, 2); // chunks = ([1, 2], [3, 4], [5, 6], [7, 8], [9, 0])
-// echo array_sum(array_column($chunks, 0)) + array_sum(array_column($chunks, 1)); 1 + 2 + ... + 0 = 45
-$chunksUnited = array_map('implode', $chunks); // chunksUnited = (12, 34, 56, 78, 90)
-print_r($chunksUnited);
-echo array_sum($chunksUnited);
