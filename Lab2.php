@@ -179,3 +179,65 @@ function sumDigitsUnlessSumIsLess10($n) {
         sumDigitsUnlessSumIsLess10($sum);
 }
 sumDigitsUnlessSumIsLess10($number);
+echo "\n\n";
+
+/* Ex. 17 */
+function arrayFill($symbol, $size)
+{
+    $array = array();
+    for ($i = 0; $i < $size; $i++) {
+        $array[$i] = $symbol;
+    }
+    return $array;
+}
+$x_array = arrayFill('x', 5);
+print_r($x_array);
+echo "\n";
+
+$array_2D = array([[1, 2, 3], [4, 5], [6]]);
+$sum = 0;
+for ($row = 0; $row < sizeof($array_2D); $row++)
+    for ($subarr = 0; $subarr < sizeof($array_2D[$row]); $subarr++) // iterating subarrays
+        for ($i = 0; $i < sizeof($array_2D[$row][$subarr]); $i++)
+            $sum += $array_2D[$row][$subarr][$i];
+echo $sum;
+echo "\n";
+
+$my_array_2D = array();
+for ($subarr = 0; $subarr < 3; $subarr++) // iterating subarrays
+    for ($i = 0; $i < 3; $i++) {
+        if ($subarr == 0)
+            $my_array_2D[$subarr][$i] = $subarr + $i + 1;
+        if ($subarr == 1)
+            $my_array_2D[$subarr][$i] = $subarr + $i + 3;
+        if ($subarr == 2)
+            $my_array_2D[$subarr][$i] = $subarr + $i + 5;
+    }
+print_r($my_array_2D);
+echo "\n";
+
+$my_array3 = array(2, 5, 3, 9);
+$result = $my_array3[0]*$my_array3[1] + $my_array3[2]*$my_array3[3];
+echo $result;
+echo "\n\n";
+
+$user = array(
+    'name' => 'Pavel',
+    'surname' => 'Sokolov',
+    'patronymic' => "Nikolaevich",
+);
+echo $user['name']." ".$user['surname']." ".$user['patronymic'];
+echo "\n\n";
+
+$date = array(
+    'year' => 2022,
+    'month' => 'October',
+    'day' => 14,
+);
+echo $date['year']."-".$date['month']."-".$date['day'];
+echo "\n\n";
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+echo count($arr)."\n";
+echo $arr[sizeof($arr) - 1]."\n";
+echo $arr[sizeof($arr) - 2]."\n";
