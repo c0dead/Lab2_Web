@@ -298,3 +298,33 @@ function pyramid() {
 }
 pyramid();
 echo "\n";
+
+/* Ex. 20 */
+$my_array4 = array(1, 8, 9, 3, 6, 5);
+$average = array_sum($my_array4)/count($my_array4);
+echo $average."\n";
+
+// способ 1:
+echo array_sum(range(1,100))."\n";
+// способ 2: сумма арифметической прогрессии Sn = (a1 + an)*(n/2)
+echo (1 + 100)*(100/2)."\n";
+
+echo "\n";
+$numbers = array(3, 8, 9, 16, 6, 25);
+$rootNumbers = array_map('sqrt', $numbers);
+print_r($rootNumbers);
+
+echo "\n";
+$keys = range('a', 'z');
+$values = range(1, 26);
+$array = array_combine($keys, $values);
+print_r($array);
+
+echo "\n";
+$line = '1234567890';
+$array = str_split($line); // array = (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+$chunks = array_chunk($array, 2); // chunks = ([1, 2], [3, 4], [5, 6], [7, 8], [9, 0])
+// echo array_sum(array_column($chunks, 0)) + array_sum(array_column($chunks, 1)); 1 + 2 + ... + 0 = 45
+$chunksUnited = array_map('implode', $chunks); // chunksUnited = (12, 34, 56, 78, 90)
+print_r($chunksUnited);
+echo array_sum($chunksUnited);
